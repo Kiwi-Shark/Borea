@@ -12,4 +12,5 @@ public enum TaskKind
     ModListImport,
     ManualReplace,
     LibraryFolderChange,
+    PackUpdate,
 }
