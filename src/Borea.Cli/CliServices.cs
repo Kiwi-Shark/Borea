@@ -87,6 +87,9 @@ internal sealed class CliServices : IDisposable
     public required IModPackRepository ReadOnlyModPacks { get; init; }
 
     public required IModPackInstaller ModPackInstaller { get; init; }
+
+    public required IModPackUpdater ModPackUpdater { get; init; }
+
     public required ISharedProfileLauncher SharedProfileLauncher { get; init; }
 
     /// <summary>
@@ -124,6 +127,7 @@ internal sealed class CliServices : IDisposable
         IModPackRepository? modPacks = null,
         IModPackRepository? readOnlyModPacks = null,
         IModPackInstaller? modPackInstaller = null,
+        IModPackUpdater? modPackUpdater = null,
         ISharedProfileLauncher? sharedProfileLauncher = null,
         IContentIndexRefresh? indexRefresh = null,
         ISharedProfileImporter? sharedProfileImporter = null,
@@ -166,6 +170,7 @@ internal sealed class CliServices : IDisposable
             ModPacks = modPacks ?? services.ModPacks,
             ReadOnlyModPacks = readOnlyModPacks ?? services.ReadOnlyModPacks,
             ModPackInstaller = modPackInstaller ?? services.ModPackInstaller,
+            ModPackUpdater = modPackUpdater ?? services.ModPackUpdater,
             SharedProfileLauncher = sharedProfileLauncher ?? services.SharedProfileLauncher,
             Graph = services,
             AdditionalDisposable = launcher is IDisposable disposable && !ReferenceEquals(launcher, services.Launcher)

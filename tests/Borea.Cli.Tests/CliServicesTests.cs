@@ -105,6 +105,7 @@ public sealed class CliServicesTests : IDisposable
             ModPacks = graph.ModPacks,
             ReadOnlyModPacks = graph.ReadOnlyModPacks,
             ModPackInstaller = graph.ModPackInstaller,
+            ModPackUpdater = graph.ModPackUpdater,
             SharedProfileLauncher = graph.SharedProfileLauncher,
             Graph = owner,
         };
